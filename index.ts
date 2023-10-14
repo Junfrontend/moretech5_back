@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import router from './routes/index';
 import { createServer } from "http";
+import { generateData } from './data/dataGenerator';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use('/api', router);
 
 const start = async () => {
     try {
+        generateData();
         server.listen(PORT, () => {
             console.log(`Server has been started at ${PORT} port.`);
         });
