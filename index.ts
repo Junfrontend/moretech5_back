@@ -4,8 +4,6 @@ import express from 'express';
 import router from './routes/index';
 import { createServer } from "http";
 import { generateData } from './data/dataGenerator';
-import { officeTickets } from './data/offices';
-import { sequelize } from './db/config';
 
 dotenv.config();
 
