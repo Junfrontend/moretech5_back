@@ -1,4 +1,4 @@
-import { OfficeType } from '../types';
+import { OfficeType, TicketType } from '../types';
 
 export const officesData: OfficeType[] = [
     {
@@ -28,7 +28,7 @@ export const officesData: OfficeType[] = [
             },
             {
                 days: 'сб',
-                hours: 'выходной',
+                hours: '09:00-21:00',
             },
             {
                 days: 'вс',
@@ -17026,8 +17026,32 @@ export const officesData: OfficeType[] = [
         status: 'открытая',
         openHours: [
             {
-                days: 'Не обслуживает ЮЛ',
-                hours: null,
+                days: 'пн',
+                hours: '09:00-18:00',
+            },
+            {
+                days: 'вт',
+                hours: '09:00-18:00',
+            },
+            {
+                days: 'ср',
+                hours: '09:00-18:00',
+            },
+            {
+                days: 'чт',
+                hours: '09:00-18:00',
+            },
+            {
+                days: 'пт',
+                hours: '09:00-17:00',
+            },
+            {
+                days: 'сб',
+                hours: '09:00-20:00',
+            },
+            {
+                days: 'вс',
+                hours: 'выходной',
             },
         ],
         rko: 'нет РКО',
@@ -17073,3 +17097,5 @@ export const officesData: OfficeType[] = [
         myBranch: false,
     },
 ];
+
+export const officeTickets: TicketType[] = []

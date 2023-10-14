@@ -4,7 +4,8 @@ export interface GetAllOfficesRequestQueryI {
     leftLimitLongitude: number,
     rightLimitLongitude: number,
     pointType: PointEnum,
-    serviceType?: ServiceEnum
+    serviceType?: ServiceEnum,
+    hasRamp?: boolean
 }
 
 export enum PointEnum {

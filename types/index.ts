@@ -1,4 +1,7 @@
+import { ServiceEnum } from "../controllers/officeController/types"
+
 export type OfficeType = {
+    id?: number,
     salePointName: string,
     address: string,
     status: string,
@@ -22,7 +25,14 @@ export type OfficeType = {
     mortgageService?: boolean,
     carCreditService?: boolean,
     depositsService?: boolean,
+    isOpen?: boolean,
+    workload?: { [service: string]: WorkLoadType[] },
+    queueLoad?: { [service: string]: QueueLoadType }
+
 }
+
+export type WorkLoadType = { day: number, count: number }
+export type QueueLoadType = { time: number, count: number }
 
 type OpenHoursType = {
     days: string,
@@ -52,6 +62,19 @@ type ServiceParameterType = {
     serviceCapability: string,
     serviceActivity: string,
 }
+
+export type TicketType = {
+    officeId: number,
+    createdAt: Date,
+    service: ServiceEnum,
+    status: TicketStatus
+}
+
+export enum TicketStatus {
+    WAITING = "waiting",
+    SUCCESS = "success"
+}
+
 
 // type ServiceCapability = "SUPPORTED" | "UNSUPPORTED" | "UNKNOWN"
 
