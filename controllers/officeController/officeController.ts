@@ -6,6 +6,7 @@ import { atmsData } from '../../data/atms';
 import { AtmsType, OfficeType, TicketType } from '../../types';
 import { AverageServiceTime } from '../../data/dataGenerator';
 import moment from 'moment';
+import { getAddress } from '../../services/getDadataApi';
 
 const officeController = {
   async getAllOffices(
@@ -152,6 +153,23 @@ const officeController = {
 
       const office = atmsData[atmId];
       return res.status(200).send(office);
+    } catch (error) {
+      console.log(error)
+      return next(error);
+    }
+  },
+
+  async getAddresses(
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) {
+    try {
+      const { value } = req.query;
+
+      const addresses = await getAddress(value.toString(), 5)
+
+      return res.status(200).send(addresses);
     } catch (error) {
       console.log(error)
       return next(error);

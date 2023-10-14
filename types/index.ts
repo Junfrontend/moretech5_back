@@ -75,6 +75,12 @@ export enum TicketStatus {
     SUCCESS = "success"
 }
 
+export type IAutocompliteAddress = {
+    value: string;
+    lat: string;
+    lon: string;
+}
+
 
 // type ServiceCapability = "SUPPORTED" | "UNSUPPORTED" | "UNKNOWN"
 
