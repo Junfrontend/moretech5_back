@@ -28,7 +28,6 @@ export type OfficeType = {
     isOpen?: boolean,
     workload?: { [service: string]: WorkLoadType[] },
     queueLoad?: { [service: string]: QueueLoadType }
-
 }
 
 export type WorkLoadType = { day: number, count: number }
