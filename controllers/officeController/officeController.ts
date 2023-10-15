@@ -28,7 +28,7 @@ const officeController = {
       let result: OfficeType[] | AtmsType[];
       if (pointType == PointEnum.OFFICE) {
         //фильтрация по расположению на карте
-        result = officesData.map((office, index) => ({ id: index, ...office })).filter(
+        result = officesData.map((office, index) => ({ id: index + 1, ...office })).filter(
           (office) =>
             office.latitude >= downLimitLatitude &&
             office.latitude <= upLimitLatitude &&
@@ -109,7 +109,7 @@ const officeController = {
 
       if (pointType == PointEnum.ATM) {
         //фильтрация по расположению на карте
-        result = atmsData.map((atm, index) => ({ id: index, ...atm })).filter(
+        result = atmsData.map((atm, index) => ({ id: index + 1, ...atm })).filter(
           (atm) =>
             atm.latitude >= downLimitLatitude &&
             atm.latitude <= upLimitLatitude &&
@@ -135,7 +135,7 @@ const officeController = {
     try {
       const { officeId } = req.params;
 
-      const office = officesData[officeId];
+      const office = officesData[officeId + 1];
       return res.status(200).send(office);
     } catch (error) {
       console.log(error)
@@ -151,7 +151,7 @@ const officeController = {
     try {
       const { atmId } = req.params;
 
-      const office = atmsData[atmId];
+      const office = atmsData[atmId + 1];
       return res.status(200).send(office);
     } catch (error) {
       console.log(error)
